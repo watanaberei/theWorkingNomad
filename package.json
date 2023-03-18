@@ -1,7 +1,7 @@
 {
   "name": "sourcecode",
   "version": "1.0.0",
-  "description": "",
+  "description": "![\"blog\"](/images/screenshot.png)",
   "main": "index.js",
   "scripts": {
     "start": "webpack --mode development",
@@ -22,7 +22,7 @@
   "devDependencies": {
     "html-webpack-plugin": "^5.3.2",
     "webpack": "^5.45.1",
-    "webpack-cli": "^4.7.2",
+    "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^3.11.2"
   }
 }

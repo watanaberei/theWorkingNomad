@@ -2,7 +2,7 @@ const Header = {
   render: () => {
     return `<nav class="navigation container d-flex">
           <!-- logo -->
-          <a class="logo" href="#">CodingMega</a>
+          <a class="logo" href="#">theWorkingNomad</a>
           <!-- menu -->
           <ul class="nav-list d-flex">
             <li><a href="/#/">Home</a></li>

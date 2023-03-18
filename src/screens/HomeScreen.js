@@ -5,6 +5,7 @@ import Blog from "../components/Blog.js";
 const HomeScreen = {
   render: async () => {
     const blogs = await getBlogs();
+    console.log(blogs);
     return `<div>
     <div class="blog-layout container" id="blog-layout">
     ${blogs.map((blog) => `${Blog.render(blog)}`).join("\n")}

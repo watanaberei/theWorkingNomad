@@ -26,8 +26,8 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.6rem;
+  font-family: "Helvetica", sans-serif;
+  font-size: 0.9rem;
   background-color: #fcfafa;
   color: var(--black);
   font-weight: 400;
