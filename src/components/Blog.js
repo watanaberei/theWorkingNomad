@@ -1,4 +1,5 @@
 import { format, parseISO } from "date-fns";
+
 const Blog = {
   render: (blog) => {
     return `<div class="blog">
@@ -31,7 +32,6 @@ const Blog = {
                 </div>
               </div>
             </div>`;
-  },
+  }
 };
-
 export default Blog;
