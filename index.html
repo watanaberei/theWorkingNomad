@@ -12,17 +12,19 @@
       rel="stylesheet"
     />
     <!-- StyleSheet -->
+        <!-- CSS -->
     <link rel="stylesheet" href="styles.css" />
     <title>Tech Blog</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6192736694961269"
      crossorigin="anonymous"></script>
+     <!-- Link to CSS file -->
+    <link rel="stylesheet" href="blog_dynamic.css" />
+
+    <!-- Include JS file -->
+    <script src="blog_dynamic.js"></script>
+
   </head>
-  <body>
-    vscode
-
-asfasf
-
-    
+  <body>   
     <div class="preloader d-flex" id="loading">
       <img src="./images/loader.gif" alt="" />
     </div>
@@ -41,12 +43,15 @@ asfasf
         </nav>
       </header>
       <main>
+
         <!-- Ad -->
         <div class="ad d-flex">
           <a href="/#/">
             <img src="/images/horizontal-ad.svg" />
           </a>
         </div>
+
+
         <!-- blogs -->
         <div class="content" id="content">
           <div class="blog-layout container">
@@ -59,117 +64,110 @@ asfasf
                   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6192736694961269"
                        crossorigin="anonymous"></script>
                   <!-- ad_top-banner -->
-                  <ins class="adsbygoogle"
-                       style="display:block"
-                       data-ad-client="ca-pub-6192736694961269"
-                       data-ad-slot="2311865152"
-                       data-ad-format="auto"
-                       data-full-width-responsive="true"></ins>
-                  <script>
-                       (adsbygoogle = window.adsbygoogle || []).push({});
-                  </script>
-                  <!--<a href="/#/"
-                    >Lorem ipsum dolor sit amet consectetur adipisicing.</a
-                  > -->
-                </h2>
-                <div class="d-flex">
-                  <div class="category">App Design</div>
-                  <div class="date">26th August 2021</div>
-                </div>
-                <div class="author d-flex">
-                  <div class="author-image">
-                    <img src="./images/profile-9.png" alt="" />
+                  <ins class="adsbygoogle"></ins>
+                  <h2>
+                    ${placeholderText.heading}
+                  </h2>
+                  <div class="d-flex">
+                    <div class="category">${placeholderText.category}</div>
+                    <div class="date">${placeholderText.date}</div>
                   </div>
-                  <div class="author-name">Kelvin</div>
-                </div>
-              </div>
-            </div>
-            <div class="blog">
-              <div class="blog-img">
-                <a href="/#/"><img src="./images/blog-2.svg" alt="" /></a>
-              </div>
-              <div class="blog-text">
-                <h2>
-                  <a href="/#/"
-                    >Lorem ipsum dolor sit amet consectetur adipisicing.</a
-                  >
-                </h2>
-                <div class="d-flex">
-                  <div class="category">App Design</div>
-                  <div class="date">26th August 2021</div>
-                </div>
-                <div class="author d-flex">
-                  <div class="author-image">
-                    <img src="./images/profile-9.png" alt="" />
+                  <div class="author d-flex">
+                    <div class="author-image">
+                      <img src="${blogData[0].authorImage}" alt="" />
+                    </div>
+                    <div class="author-name">${placeholderText.authorName}</div>
                   </div>
-                  <div class="author-name">Kelvin</div>
                 </div>
               </div>
-            </div>
-            <div class="blog">
-              <div class="blog-img">
-                <a href="/#/"><img src="./images/blog-3.svg" alt="" /></a>
-              </div>
-              <div class="blog-text">
-                <h2>
-                  <a href="/#/"
-                    >Lorem ipsum dolor sit amet consectetur adipisicing.</a
-                  >
-                </h2>
-                <div class="d-flex">
-                  <div class="category">App Design</div>
-                  <div class="date">26th August 2021</div>
+              <div class="blog">
+                <div class="blog-img">
+                  <a href="/#/"><img src="${blogData[1].imgSrc}" alt="" /></a>
                 </div>
-                <div class="author d-flex">
-                  <div class="author-image">
-                    <img src="./images/profile-9.png" alt="" />
+                <div class="blog-text">
+                  <h2>
+                    ${placeholderText.heading}
+                  </h2>
+                  <div class="d-flex">
+                    <div class="category">${placeholderText.category}</div>
+                    <div class="date">${placeholderText.date}</div>
                   </div>
-                  <div class="author-name">Kelvin</div>
+                  <div class="author d-flex">
+                    <div class="author-image">
+                      <img src="${blogData[1].authorImage}" alt="" />
+                    </div>
+                    <div class="author-name">${placeholderText.authorName}</div>
+                  </div>
                 </div>
               </div>
+              <div class="blog">
+                <div class="blog-img">
+                  <a href="/#/"><img src="${blogData[2].imgSrc}" alt="" /></a>
+                </div>
+                <div class="blog-text">
+                  <h2>
+                    ${placeholderText.heading}
+                  </h2>
+                  <div class="d-flex">
+                    <div class="category">${placeholderText.category}</div>
+                    <div class="date">${placeholderText.date}</div>
+                  </div>
+                  <div class="author d-flex">
+                    <div class="author-image">
+                      <img src="${blogData[2].authorImage}" alt="" />
+                    </div>
+                    <div class="author-name">${placeholderText.authorName}</div>
+                  </div>
+                </div>
+              </div>
+              ${adTopBanner}
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6192736694961269"
+                   crossorigin="anonymous"></script>
+              <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-format="fluid"
+                   data-ad-layout-key="-7k+db+1o+m+1s"
+                   data-ad-client="ca-pub-6192736694961269"
+                   data-ad-slot="1109344567"></ins>
+              <script>
+                   (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
             </div>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6192736694961269"
-                 crossorigin="anonymous"></script>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-format="fluid"
-                 data-ad-layout-key="-7k+db+1o+m+1s"
-                 data-ad-client="ca-pub-6192736694961269"
-                 data-ad-slot="1109344567"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
           </div>
-        </div>
-        <!-- Ad -->
-        <div class="ad d-flex">
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6192736694961269"
-               crossorigin="anonymous"></script>
-          <!-- ad-footer -->
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-6192736694961269"
-               data-ad-slot="7371500585"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-          <script>
-               (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-        </div>
-      </main>
-      <!-- Footer -->
-      <footer id="footer" class="footer">
-        <div class="layout d-flex">
-          <p>Copyright &copy; 2021</p>
-          <div class="social">
-            <a href="#"><i class="bx bxl-instagram"></i></a>
-            <a href="#"><i class="bx bxl-youtube"></i></a>
-            <a href="#"><i class="bx bxl-facebook"></i></a>
+  
+          <!-- blog dynamic -->
+          <div id="grid"></div>
+          
+          <!-- Ad -->
+          <div class="ad d-flex">
+            ${adFooter}
           </div>
-        </div>
-      </footer>
-    </div>
-    <!-- Script -->
-    <script src="bundle.js"></script>
-  </body>
+        </main>
+        <!-- Footer -->
+        <footer id="footer" class="footer">
+          <div class="layout d-flex">
+            <p>${placeholderText.date} &copy; 2021</p>
+            <div class="social">
+              <a href="#"><i class="bx bxl-instagram"></i></a>
+              <a href="#"><i class="bx bxl-youtube"></i></a>
+              <a href="#"><i class="bx bxl-facebook"></i></a>
+            </div>
+          </div>
+          <footer id="footer" class="footer">
+            <div class="layout d-flex">
+              <p>${placeholderText.date} &copy; 2021</p>
+              <div class="social">
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="#"><i class="bx bxl-youtube"></i></a>
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+              </div>
+            </div>
+          </footer>
+          <!-- Link to JavaScript files -->
+        <script src="bundle.js"></script>
+        <script src="index.js"></script>
+            <!-- JS -->
+    <script type="module" src="src/components/blog_dynamic.js"></script>
+</body>
 </html>
+  

@@ -1,31 +1,18 @@
-import { createClient } from "contentful";
+//import { createClient } from "contentful";
 
 // const client = createClient({
 //   space: "i1hcb4885ci0",
 //   accessToken: "Bcy-B6Lvepv3RLYinX-rY9x4KDpxJcv8_IH0PgF6odw",
 // });
 
-// import { createClient } from "contentful";
+import { createClient } from "contentful";
 
-// const client = createClient({
-//   space: "i1hcb4885ci0",
-//   accessToken: process.env.CONTENTFUL_BLOG_ARTICLE_POST_ACCESS_TOKEN_V1,
-// });
+const client = createClient({
+  space: "i1hcb4885ci0",
+  accessToken: process.env.CONTENTFUL_BLOG_ARTICLE_POST_ACCESS_TOKEN_V1,
+});
 
-
-const accessToken = "Bcy-B6Lvepv3RLYinX-rY9x4KDpxJcv8_IH0PgF6odw";
-
-console.log("API key: ", accessToken);
-
-export async function getStaticProps(){
-  const client = createClient({
-    space: "i1hcb4885ci0",
-    accessToken,
-  });
-}
-
-
-ZZ
+// Rest of the code remains the same
 
 
 export const getBlogs = async (limit = 6, skip = 0) => {
@@ -87,7 +74,3 @@ export const getBlog = async (slug) => {
     console.log(err);
   }
 };
-
-
-
-
