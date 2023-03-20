@@ -156,8 +156,6 @@ export const getBlogsByCategory = async (category) => {
 
 
 
-
-
 export const getTopBlogsByCategory = async (category, limit) => {
   try {
     const response = await client.getEntries({
@@ -188,7 +186,6 @@ export const getTopBlogsByCategory = async (category, limit) => {
     throw err; // re-throw the error to the caller
   }
 };
-
 
 
 

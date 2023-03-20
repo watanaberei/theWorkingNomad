@@ -1,8 +1,17 @@
 import { format, parseISO } from "date-fns";
 
+
 const Blog = {
   render: (blog) => {
     return `<div class="blog">
+              <blog-featured-news
+                thumbnail="path/to/image.jpg"
+                category="Category"
+                title="Card Title Text Goes Here"
+                tags='["tag1", "tag2", "tag3"]'
+                date="Just Now"
+              ></blog-featured-news>
+  
               <div class="blog-img">
                 <a href="/#/blogs/${blog.slug}">
                 <img src="https:${blog.thumbnail}" alt="" /></a>
