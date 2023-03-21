@@ -1,9 +1,8 @@
-import { addSvgToPage } from "./logo.js";
+import Form from "../atoms/logo.js";
 
 const Header = {
   render: () => {
-    return `
-        <nav class="navigation container d-flex">
+    return `<nav class="navigation container d-flex">
           <!-- logo -->
           <a class="logo" href="#"><div id="svg-container"></div></a>
           <!-- menu -->
@@ -20,18 +19,19 @@ const Header = {
   after_render: () => {
     const navList = document.querySelector(".nav-list");
     const hamburger = document.querySelector(".hamburger");
-    const navHeight = document.querySelector(".navigation").getBoundingClientRect().height;
+    const header = document.querySelector(".header");
 
     hamburger.addEventListener("click", () => {
       navList.classList.toggle("show");
     });
 
+    const navHeight = header.getBoundingClientRect().height;
     window.addEventListener("scroll", () => {
       const scrollHeight = window.pageYOffset;
       if (scrollHeight > navHeight) {
-        document.body.classList.add("fix");
+        header.classList.add("fix");
       } else {
-        document.body.classList.remove("fix");
+        header.classList.remove("fix");
       }
     });
 
@@ -45,9 +45,8 @@ const Header = {
         });
       });
     });
-
-    addSvgToPage();
   },
 };
 
 export default Header;
+window.onload = addSvgToPage;

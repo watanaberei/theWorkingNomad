@@ -6,6 +6,11 @@ import ContactScreen from "./screens/ContactScreen.js";
 import Error404Page from "./screens/Error404Page.js";
 import { parseRequestUrl, showLoading, hideLoading } from "./utils.js";
 
+
+
+
+
+
 const routes = {
   "/": HomeScreen,
   "/blogs/:slug": DetailsScreen,
@@ -32,3 +37,4 @@ const router = async () => {
 
 window.addEventListener("load", router);
 window.addEventListener("hashchange", router);
+window.onload = addSvgToPage;
