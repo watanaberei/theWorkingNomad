@@ -106,7 +106,7 @@ const HomeScreen = {
 
     const topBlogsSection=`
       <div class="top-blogs-section">
-        <div class="title">Top Blogs</div>
+        <div class="title">Nomads Blog</div>
         <div class="top-blogs">
           <div class="rest">
             <h2>Rest</h2>
