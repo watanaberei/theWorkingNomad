@@ -7,11 +7,6 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "public"),
   },
-  resolve: {
-    alias: {
-      path: path.resolve(__dirname, "./src/atoms"),
-    },
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, ".", "index.html"),

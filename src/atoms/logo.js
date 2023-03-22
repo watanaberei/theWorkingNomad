@@ -1,4 +1,4 @@
-const svgUrl = "/images/brand/theWorkingNomad_logo_horizontal.svg";
+const svgUrl = "public/images/brand/theWorkingNomad_logo_horizontal.svg";
 export function addSvgToPage() {
   const container = document.getElementById("svg-container");
   container.innerHTML = `<object type="image/svg+xml" data="${svgUrl}"></object>`;
