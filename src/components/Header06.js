@@ -1,4 +1,4 @@
-import Form from "../atoms/logo.js";
+import Form from "./logo.js";
 
 const Header = {
   render: () => {

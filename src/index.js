@@ -1,5 +1,8 @@
 import Header from "./components/Header";
 import HomeScreen from "./screens/HomeScreen.js";
+import WorkScreen from "./screens/WorkScreen.js";
+import LifeScreen from "./screens/LifeScreen.js";
+import StayScreen from "./screens/StayScreen.js";
 import DetailsScreen from "./screens/DetailsScreen.js";
 import AboutScreen from "./screens/AboutScreen.js";
 import ContactScreen from "./screens/ContactScreen.js";
@@ -16,6 +19,9 @@ const routes = {
   "/blogs/:slug": DetailsScreen,
   "/about": AboutScreen,
   "/contact": ContactScreen,
+  "/work": WorkScreen,
+  "/life": LifeScreen,
+  "/stay": StayScreen,
 };
 
 const router = async () => {
