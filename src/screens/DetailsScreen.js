@@ -68,7 +68,7 @@ const DetailsScreen = {
     const blogdetails = await getBlog(request.slug);
     const blogHtml = blogdetails.map(
       (blog) => `
-    <div class="blog-detail">
+          <div class="blog-detail">
             <div class="side-ad">
               <a href="#" class="vertical-ad">
               <img src="/images/side-ad.svg"/>
