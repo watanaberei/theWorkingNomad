@@ -26,8 +26,8 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.6rem;
+  font-family: "Helvetica", sans-serif;
+  font-size: 0.9rem;
   background-color: #fcfafa;
   color: var(--black);
   font-weight: 400;
@@ -60,7 +60,7 @@ li {
   align-items: center;
 }
 
-.overlay {
+.preloader {
   position: fixed;
   top: 0;
   left: 0;
@@ -72,12 +72,12 @@ li {
   display: none;
 }
 
-.overlay img {
+.preloader img {
   width: 20rem;
   height: 20rem;
 }
 
-.overlay.active {
+.preloader.active {
   display: flex;
 }
 
@@ -585,3 +585,17 @@ li {
   color: #ff7a7a;
   display: block;
 } */
+
+
+
+
+
+
+
+
+/* LOGO */
+
+#svg-container {
+  width: 200px;
+  height: 200px;
+}
