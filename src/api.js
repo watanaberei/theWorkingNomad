@@ -218,7 +218,7 @@ export const getRecentWork = async () => {
 
 
 
-// COMMENTS
+// Get all comments for a given slug
 export const getComments = async (slug) => {
   try {
     const response = await client.getEntries({
@@ -226,6 +226,7 @@ export const getComments = async (slug) => {
       "fields.slug": slug,
       order: "-sys.createdAt",
     });
+
     let comments = response.items;
     comments = comments.map((item) => {
       const { id, createdAt } = item.sys;
@@ -238,9 +239,54 @@ export const getComments = async (slug) => {
         date,
       };
     });
+
     return comments;
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
+
+// Get all comments for a given slug
+function createComment(body, authorName, subjectId, parentCommentId = null) {
+  const accessToken = 'IQ8TROKiudEpXTqEDO07emQDJrU3en65nSPzE58krmo';
+  const spaceId = 'i1hcb4885ci0';
+  const environmentId = 'CONTENTFUL_BLOG_COMMENTS_TOKEN_20230323';
+  const client = contentful.createClient({
+    space: spaceId,
+    accessToken: accessToken
+  });
+
+  const entryData = {
+    fields: {
+      body: {
+        'en-US': body
+      },
+      author: {
+        'en-US': authorName
+      },
+      subject: {
+        'en-US': subjectId
+      },
+      parentComment: parentCommentId ? {
+        'en-US': {
+          sys: {
+            type: 'Link',
+            linkType: 'Entry',
+            id: parentCommentId
+          }
+        }
+      } : undefined
+    }
+  };
+
+  return client.getSpace(spaceId)
+    .then(space => space.getEnvironment(environmentId))
+    .then(environment => environment.createEntry('comment', entryData))
+    .then(entry => entry.publish())
+    .then(publishedEntry => {
+      console.log(`Entry ${publishedEntry.sys.id} has been published`);
+      return publishedEntry;
+    })
+    .catch(error => console.error(error));
+}
