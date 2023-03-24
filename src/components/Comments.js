@@ -7,6 +7,7 @@ const Comments = {
     return comments
       .map(
         (comment) => `
+        COMMENTS
         <div class="comment">
           <div class="comment-author">${comment.author}</div>
           <div class="comment-date">${comment.date}</div>

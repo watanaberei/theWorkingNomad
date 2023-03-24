@@ -4,8 +4,9 @@ import { addSvgToPage } from "../atoms/logo.js";
     render: () => {
       return `
           <nav class="navigation container d-flex">
+          HEADER HERE
             <!-- logo -->
-            <a class="logo" href="#"><div id="svg-container"></div></a>
+            <a class="logo" href="#">theWorkingNomad<div id="svg-container"></div></a>
             <!-- menu -->
             <ul class="nav-list d-flex">
               <li><a href="/#/">Home</a></li>

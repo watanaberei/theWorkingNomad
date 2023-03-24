@@ -1,6 +1,7 @@
 import { getLatestBlog, getBlogsByCategory, getTopBlogsByCategory, getRecentWork } from "../api.js";
 import Blog from "../components/Blog.js";
 
+
 const HomeScreen = {
   render: async () => {
     // Section 1: Most recent post

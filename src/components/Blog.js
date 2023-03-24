@@ -4,6 +4,7 @@ import { format, parseISO } from "date-fns";
 const Blog = {
   render: (blog) => {
     return `<div class="blog">
+    BLOG
               <blog-featured-news
                 thumbnail="path/to/image.jpg"
                 category="Category"
