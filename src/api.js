@@ -1,15 +1,6 @@
-// import { createClient } from "contentful";
+// src/api.js
 
-// const CONTENTFUL_SPACE_ID = "i1hcb4885ci0";
-// const CONTENTFUL_ACCESS_TOKEN = "Bcy-B6Lvepv3RLYinX-rY9x4KDpxJcv8_IH0PgF6odw";
-// const client = createClient({
-//   space: CONTENTFUL_SPACE_ID,
-//   accessToken: CONTENTFUL_ACCESS_TOKEN,
-// });
-
-
-
-
+// API
 import { createClient } from "contentful";
 
 const client = createClient({
@@ -18,7 +9,7 @@ const client = createClient({
 });
 
 
-
+// COMMENTS
 export const getBlogs = async (limit = 6, skip = 0) => {
   try {
     // Pagination
@@ -54,7 +45,7 @@ export const getBlogs = async (limit = 6, skip = 0) => {
 };
 
 
-
+// HOME
 export const getBlog = async (slug) => {
   try {
     const response = await client.getEntries({
@@ -221,3 +212,35 @@ export const getRecentWork = async () => {
 
 
 
+
+
+
+
+
+
+// COMMENTS
+export const getComments = async (slug) => {
+  try {
+    const response = await client.getEntries({
+      content_type: "comments",
+      "fields.slug": slug,
+      order: "-sys.createdAt",
+    });
+    let comments = response.items;
+    comments = comments.map((item) => {
+      const { id, createdAt } = item.sys;
+      const { author, text } = item.fields;
+      const date = new Date(createdAt);
+      return {
+        id,
+        author,
+        text,
+        date,
+      };
+    });
+    return comments;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+};

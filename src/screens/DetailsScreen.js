@@ -3,6 +3,7 @@ import { parseRequestUrl } from "../utils.js";
 import { getBlog } from "../api.js";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { format, parseISO } from "date-fns";
+import Comments from "../components/Comments.js";
 
 const renderOptions = {
   renderNode: {
@@ -65,7 +66,7 @@ const DetailsScreen = {
   render: async () => {
     const request = parseRequestUrl();
     const blogdetails = await getBlog(request.slug);
-    return blogdetails.map(
+    const blogHtml = blogdetails.map(
       (blog) => `
     <div class="blog-detail">
             <div class="side-ad">
@@ -107,6 +108,12 @@ const DetailsScreen = {
           </div>
     `
     );
+    return `
+      <div class="details-screen">
+        ${blogHtml.join('')}
+        <div class="comment-section"></div>
+      </div>
+    `;
   },
   after_render: () => {
     window.scrollTo({
@@ -114,6 +121,9 @@ const DetailsScreen = {
       left: 0,
       behavior: "smooth",
     });
+
+    // Call the Comments component's after_render method
+    Comments.after_render();
   },
 };
 
