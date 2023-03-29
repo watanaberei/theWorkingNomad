@@ -2,12 +2,17 @@
 
 // API
 import { createClient } from "contentful";
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 
 const client = createClient({
-  space: "i1hcb4885ci0",
-  accessToken: "Bcy-B6Lvepv3RLYinX-rY9x4KDpxJcv8_IH0PgF6odw",
+  space: process.env.CONTENTFUL_BLOG_ARTICLE_ID_20231903,
+  accessToken: process.env.CONTENTFUL_BLOG_ARTICLE_TOKEN_20231903,
 });
 
+export default client;
 // export default client; // Add this line to export the client object
 
 
@@ -251,10 +256,11 @@ export const getComments = async (slug) => {
 
 // Get all comments for a given slug
 function createComment(body, authorName, subjectId, parentCommentId = null) {
-  const accessToken = 'IQ8TROKiudEpXTqEDO07emQDJrU3en65nSPzE58krmo';
-  const spaceId = 'i1hcb4885ci0';
-  const environmentId = 'CONTENTFUL_BLOG_COMMENTS_TOKEN_20230323';
-  const client = contentful.createClient({
+  const accessToken = process.env.CONTENTFUL_COMMENTS_ACCESS_TOKEN;
+  const spaceId = process.env.CONTENTFUL_BLOG_ARTICLE_ID_20231903;
+  const environmentId = 'master';
+  
+  const commentsClient = createClient({
     space: spaceId,
     accessToken: accessToken
   });
@@ -282,7 +288,7 @@ function createComment(body, authorName, subjectId, parentCommentId = null) {
     }
   };
 
-  return client.getSpace(spaceId)
+  return commentsClient.getSpace(spaceId)
     .then(space => space.getEnvironment(environmentId))
     .then(environment => environment.createEntry('comment', entryData))
     .then(entry => entry.publish())
@@ -292,3 +298,7 @@ function createComment(body, authorName, subjectId, parentCommentId = null) {
     })
     .catch(error => console.error(error));
 }
+
+
+
+export { createComment };
