@@ -1,12 +1,11 @@
 // src/api.js
 
-// API
+// API for blog
 import { createClient } from "contentful";
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 
-dotenv.config();
-
-
+// dotenv.config();
+ 
 const client = createClient({
   space: process.env.CONTENTFUL_BLOG_ARTICLE_ID_20231903,
   accessToken: process.env.CONTENTFUL_BLOG_ARTICLE_TOKEN_20231903,
@@ -26,7 +25,7 @@ export const getBlogs = async (limit = 6, skip = 0) => {
       skip,
     });
     console.log(response);  
-    let blogs = response.items;
+    let blogs = response.items; 
     blogs = blogs.map((item) => {
       const { id, createdAt } = item.sys;
       const { header, title, slug, authorName, category, views } = item.fields; 
@@ -36,7 +35,7 @@ export const getBlogs = async (limit = 6, skip = 0) => {
         id,
         title,
         thumbnail,
-        slug,
+        slug, 
         authorName,
         authorImage,
         createdAt,
@@ -256,6 +255,7 @@ export const getComments = async (slug) => {
 
 // Get all comments for a given slug
 function createComment(body, authorName, subjectId, parentCommentId = null) {
+  // API for comments
   const accessToken = process.env.CONTENTFUL_COMMENTS_ACCESS_TOKEN;
   const spaceId = process.env.CONTENTFUL_BLOG_ARTICLE_ID_20231903;
   const environmentId = 'master';
@@ -302,3 +302,4 @@ function createComment(body, authorName, subjectId, parentCommentId = null) {
 
 
 export { createComment };
+ 
