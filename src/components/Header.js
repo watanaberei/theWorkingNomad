@@ -1,5 +1,5 @@
-// import { addSvgToPage } from "../atoms/logo.js";
-import { addSvgToPage } from "./atoms/logo";
+import { addSvgToPage } from "../atoms/logo.js";
+//  import { addSvgToPage } from "./atoms/logo";
 
   const Header = {
     render: () => {
