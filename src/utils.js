@@ -15,3 +15,7 @@ export const showLoading = () => {
 export const hideLoading = () => {
   document.getElementById("loading").classList.remove("active");
 };
+
+window.addEventListener("DOMContentLoaded", () => {
+  showLoading();
+});
