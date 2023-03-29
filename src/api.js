@@ -5,10 +5,10 @@ import { createClient } from "contentful";
 
 const client = createClient({
   space: "i1hcb4885ci0",
-  accessToken: "wiaBDCx0GKuNJgsUP3cdQkm7ImEee6r7RrgMxRKSmpo",
+  accessToken: "XpeZUCkoU6MMWjBLGWMJVKJyzng5_IahH2W-2Q7a-_U",
 });
 
-export default client; // Add this line to export the client object
+// export default client; // Add this line to export the client object
 
 
 // COMMENTS
