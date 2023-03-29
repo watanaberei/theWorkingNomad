@@ -5,13 +5,13 @@ import { createClient } from "contentful";
 
 const client = createClient({
   space: "i1hcb4885ci0",
-  accessToken: "XpeZUCkoU6MMWjBLGWMJVKJyzng5_IahH2W-2Q7a-_U",
+  accessToken: "Bcy-B6Lvepv3RLYinX-rY9x4KDpxJcv8_IH0PgF6odw",
 });
 
 // export default client; // Add this line to export the client object
 
 
-// COMMENTS
+// GETBLOGS
 export const getBlogs = async (limit = 6, skip = 0) => {
   try {
     // Pagination
