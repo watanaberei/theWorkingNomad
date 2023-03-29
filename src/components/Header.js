@@ -52,4 +52,4 @@ import { addSvgToPage } from "../atoms/logo.js";
     },
   };
 
-  export default Header; // Make sure to export the Header component
+export default Header; // Make sure to export the Header component

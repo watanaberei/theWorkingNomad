@@ -1,20 +1,20 @@
 const blogData = [
   {
-    imgSrc: '/src/images/blog-1.svg',
+    imgSrc: '/public/images/blog-1.svg',
     category: 'App Design',
     date: '26th August 2021',
     authorImage: './images/profile-9.png',
     authorName: 'Kelvin',
   },
   {
-    imgSrc: '/src/images/blog-2.svg',
+    imgSrc: '/public/images/blog-2.svg',
     category: 'App Design',
     date: '26th August 2021',
     authorImage: './images/profile-9.png',
     authorName: 'Kelvin',
   },
   {
-    imgSrc: '/src/images/blog-3.svg',
+    imgSrc: '/public/images/blog-3.svg',
     category: 'App Design',
     date: '26th August 2021',
     authorImage: './images/profile-9.png',
