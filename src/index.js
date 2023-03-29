@@ -8,6 +8,7 @@ import AboutScreen from "./screens/AboutScreen.js";
 import ContactScreen from "./screens/ContactScreen.js";
 import Error404Page from "./screens/Error404Page.js";
 import { parseRequestUrl, showLoading, hideLoading } from "./utils.js";
+import { addSvgToPage } from "./atoms/logo";
 
 
 

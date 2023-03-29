@@ -8,6 +8,8 @@ const client = createClient({
   accessToken: "Bcy-B6Lvepv3RLYinX-rY9x4KDpxJcv8_IH0PgF6odw",
 });
 
+export default client; // Add this line to export the client object
+
 
 // COMMENTS
 export const getBlogs = async (limit = 6, skip = 0) => {
