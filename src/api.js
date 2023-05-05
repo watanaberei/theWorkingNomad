@@ -100,27 +100,31 @@ export const getBlog = async (slug) => {
     let blogdetails = response.items;
     blogdetails = blogdetails.map((item) => {
       const { id, createdAt } = item.sys;
-      const { title, authorName, category } = item.fields;
+      const { title, featured, section, overview, introduction, authorName, category, tag, metatag } = item.fields;
       const details = item.fields.details;
       const featuredImage = item.fields.featuredImage.fields.file.url;
       return {
         id,
         title,
-        thumbnail,
-        slug,
+        featured,
+        section,
+        overview,
+        introduction,
+        featuredImage,
+        details,
         authorName,
-        authorImage,
         createdAt,
         category,
-        views,
+        tag,
+        metatag,
       };
     });
     return blogdetails;
   } catch (err) {
     console.log(err);
-    throw err; // re-throw the error to the caller
   }
 };
+
 
 
 
