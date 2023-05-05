@@ -15,8 +15,7 @@ export default client;
 // export default client; // Add this line to export the client object
 
 
-// GETBLOGS
-export const getBlogs = async (limit = 6, skip = 0) => {
+export const getBlogs = async (limit = 9, skip = 0) => {
   try {
     // Pagination
     const response = await client.getEntries({
@@ -24,31 +23,71 @@ export const getBlogs = async (limit = 6, skip = 0) => {
       limit,
       skip,
     });
-    console.log(response);  
-    let blogs = response.items; 
+    // console.log("blog response" + response);  
+    let blogs = response.items;
+    console.log("blogs" + blogs);
     blogs = blogs.map((item) => {
       const { id, createdAt } = item.sys;
-      const { header, title, slug, authorName, category, views } = item.fields; 
+      const { title, featured, section, overview, introduction, slug, authorName, category, tag, metatag } = item.fields;
       const thumbnail = item.fields.thumbnail.fields.file.url;
       const authorImage = item.fields.authorImage.fields.file.url;
       return {
         id,
         title,
+        featured,
+        section,
+        overview,
+        introduction,
         thumbnail,
-        slug, 
+        slug,
         authorName,
         authorImage,
         createdAt,
         category,
-        views,
+        tag,
+        metatag,
       };
     });
+    console.log("BLOGS:" + blogs);
     return blogs;
   } catch (err) {
     console.log(err);
-    throw err; // re-throw the error to the caller
   }
 };
+// GETBLOGS
+// export const getBlogs = async (limit = 6, skip = 0) => {
+//   try {
+//     // Pagination
+//     const response = await client.getEntries({
+//       content_type: "appFastFoodHomePage031523",
+//       limit,
+//       skip,
+//     });
+//     console.log(response);  
+//     let blogs = response.items; 
+//     blogs = blogs.map((item) => {
+//       const { id, createdAt } = item.sys;
+//       const { header, title, slug, authorName, category, views } = item.fields; 
+//       const thumbnail = item.fields.thumbnail.fields.file.url;
+//       const authorImage = item.fields.authorImage.fields.file.url;
+//       return {
+//         id,
+//         title,
+//         thumbnail,
+//         slug, 
+//         authorName,
+//         authorImage,
+//         createdAt,
+//         category,
+//         views,
+//       };
+//     });
+//     return blogs;
+//   } catch (err) {
+//     console.log(err);
+//     throw err; // re-throw the error to the caller
+//   }
+// };
 
 
 // HOME
